@@ -1,0 +1,20 @@
+#Can not access to mysql
+
+    In terminal login to MySQL as root. You may have created a root 
+password when you installed MySQL for the first time or the password could be blank, if you have forgetten your root password could be blank, if you have 
+forgotten your root password, you can reset the MySQL root password.
+
+$ sudo mysql -p -u root
+
+    Now add a new MySQL user with the username for your choice. In this example
+we are calling it 'yourusername' and password 'password_here' make sure to replace 'yourusername' and 'password_here' with your own.
+
+
+    The command bellow will create a new user called 'yourusername'(call this what you like ) which can access the MySQL server from localhost with the Password 'password_here'.
+
+mysql> CREATE USER 'yourusername'@'localhost IDENTIFIED WITH mysql_native_password BY 'password_here';
+
+
+    Now we will grant superuser privilege to our new user 'yourusername'.
+
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'yourusername'@'localhost' ;
